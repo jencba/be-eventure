@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const authRouter = require('./routes/userAuth')
+const protectedRoutes = require('./routes/protected')
 
 
 
@@ -10,6 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRouter);
+app.use('/api', protectedRoutes); 
 
 
 app.all('*', (req, res) => {
