@@ -1,7 +1,7 @@
 {
   "name": "be",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "listen.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "@supabase/supabase-js": "^2.49.8",
+    "cors": "^2.8.5",
     "xpress": "^2.4.6"
   }
 }
