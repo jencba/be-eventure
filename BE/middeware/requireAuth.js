@@ -1,4 +1,4 @@
-// middleware/requireAuth.js
+
 const supabase = require('../supabase');
 
 const requireAuth = async (req, res, next) => {
