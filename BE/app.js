@@ -5,8 +5,6 @@ const protectedRoutes = require('./routes/protected')
 const eventRoutes = require('./routes/events');
 
 
-
-
 const app = express();
 
 app.use(cors());

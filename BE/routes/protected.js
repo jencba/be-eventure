@@ -1,4 +1,4 @@
-// routes/protected.js
+
 const express = require('express');
 const requireAuth = require('../middeware/requireAuth');
 
