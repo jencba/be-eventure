@@ -24,6 +24,21 @@ router.post('/', requireAuth, async (req, res) => {
   res.status(201).json(data[0]);
 });
 
+// POST /events/:id/signup
+router.post('/:id/signup', requireAuth, async (req, res) => {    
+    const user_id = req.user.id;
+    const event_id = req.params.id;
+  
+    const { data, error } = await supabase
+      .from('event_signups')
+      .insert([{ event_id, user_id }])
+      .select();
+  
+    if (error) return res.status(400).json({ error });
+    res.status(201).json(data[0]);
+  });
+  
+
 // UPDATE event — only if owned by user
 router.patch('/:id', requireAuth, async (req, res) => {
   const { id } = req.params;
