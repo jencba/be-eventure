@@ -10,6 +10,8 @@ router.get('/', async (req, res) => {
   res.json(data);
 });
 
+
+
 // CREATE event — requires auth
 router.post('/', requireAuth, async (req, res) => {
   const { title, description, date, location } = req.body;
@@ -37,7 +39,21 @@ router.post('/:id/signup', requireAuth, async (req, res) => {
     if (error) return res.status(400).json({ error });
     res.status(201).json(data[0]);
   });
+
   
+  // GET a single event by ID
+router.get('/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const { data, error } = await supabase
+    .from('events')
+    .select('*')
+    .eq('id', id)
+    .single(); 
+
+  if (error) return res.status(404).json({ error: 'Event not found' });
+  res.json(data);
+});
 
 // UPDATE event — only if owned by user
 router.patch('/:id', requireAuth, async (req, res) => {
