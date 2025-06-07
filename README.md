@@ -33,8 +33,8 @@ A Node.js and Express backend that powers the **Eventure** platform — allowing
 ### 1. Clone the repository
 
 bash
-git clone https://github.com/yourusername/eventure-be.git
-cd eventure-be
+git clone https://github.com/yourusername/be-eventure.git
+cd be-eventure
 
 
 **2. Install Dependencies**
