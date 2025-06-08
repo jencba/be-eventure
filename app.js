@@ -8,7 +8,7 @@ const eventRoutes = require('./routes/events');
 const app = express();
 
 app.use(cors({
-  origin: 'https://jencba.github.io', 
+  origin: '*', 
   credentials: true
 }));
 app.use(express.json());
